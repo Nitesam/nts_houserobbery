@@ -10,4 +10,4 @@ Multiplayer: The script supports multiple players participating in the robbery, 
 
 Cooldown Mechanism: A cooldown system is integrated into the script to avoid constant house robberies, enhancing the role-play experience.
 
-Please note that this script has been designed to work seamlessly with ESX Legacy and ox_lib, and has not been tested with other server bases or libraries.
+Please note that this script has been designed to work seamlessly with ESX Legacy and ox_lib.
