@@ -79,7 +79,7 @@ Citizen.CreateThread(function()
             coords = v.porta.coordinate,
             size = vec3(2, 2, 2),
             rotation = 45,
-            debug = false,
+            debug = Config.Debug,
             options = {
                 {
                     label = 'Forza Porta',
@@ -217,7 +217,7 @@ AddEventHandler("furto_case:inizializzaProp", function(indice, tabella)
                 coords = v.coordinate,
                 size = vec3(0.3, 0.3, 0.6),
                 rotation = 45,
-                debug = true,
+                debug = Config.Debug,
                 options = {
                     {
                         label = 'Raccogli Oggetto',
@@ -299,7 +299,7 @@ lib.callback.register("furto_case:furtoVicino", function()
         end
     end
 
-    print(indice, dIndice)
+    Debug(indice, dIndice)
 
     if indice < 1 then return false end
     return indice

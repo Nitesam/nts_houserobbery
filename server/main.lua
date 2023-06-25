@@ -158,9 +158,9 @@ lib.callback.register('furto_case:iniziaRapina', function(source, indice)
                 statoRapine[indice].cooldown = tempCooldown
 
                 cambiaStatoPorta(indice, 1)
-                print("Il Furto non era concluso, ho provveduto da solo per [" .. indice .. "]!")
+                Debug("Il Furto non era concluso, ho provveduto da solo per [" .. indice .. "]!")
             else
-                print("Il Furto era già Concluso! [" .. indice .. "]")
+                Debug("Il Furto era già Concluso! [" .. indice .. "]")
             end
         end)
         -- THREAD FINE
@@ -170,8 +170,10 @@ lib.callback.register('furto_case:iniziaRapina', function(source, indice)
 
         return true
     else
-        if statoRapine[indice] then
-            print("Rimanente per " .. indice, statoRapine[indice].cooldown.attuale - os.time(), Cooldown - os.time())
+        if Config.Debug then
+            if statoRapine[indice] then
+                Debug("Rimanente per " .. indice, statoRapine[indice].cooldown.attuale - os.time(), Cooldown - os.time())
+            end
         end
     end
 
@@ -222,7 +224,7 @@ AddEventHandler("furto_case:lasciaZona", function(indice)
 
         cambiaStatoPorta(indice, 1)
 
-        print("Furto Concluso, il Rapinatore è Uscito dalla Zona ed ho Resettato [" .. indice .. "]!")
+        Debug("Furto Concluso, il Rapinatore è Uscito dalla Zona ed ho Resettato [" .. indice .. "]!")
     end
 end)
 

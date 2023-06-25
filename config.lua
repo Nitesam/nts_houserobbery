@@ -1,4 +1,5 @@
 Config = {}
+Config.Debug = true
 
 Config.CooldownGenerico = 600 -- in secondi
 
@@ -210,4 +211,10 @@ function TableCopy(orig)
         copy = orig
     end
     return copy
+end
+
+function Debug(...)
+    if Config.Debug then
+        print(...)
+    end
 end
