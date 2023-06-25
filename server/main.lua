@@ -66,7 +66,7 @@ lib.callback.register('furto_case:iniziaRapina', function(source, indice)
 
 
     if statoRapine[indice] and statoRapine[indice].cooldown.attuale < os.time() and Cooldown < os.time() and verificaOrdine(indice) then
-        local tabellaCase = ESX.TableCopy(Config.Case[indice])
+        local tabellaCase = TableCopy(Config.Case[indice])
 
         Cooldown = os.time() + Config.CooldownGenerico
 
@@ -152,7 +152,7 @@ lib.callback.register('furto_case:iniziaRapina', function(source, indice)
                     DeleteEntity(statoRapine[indice].allarme.oggettoAllarme)
                 end
 
-                local tempCooldown = ESX.TableCopy(statoRapine[indice].cooldown)
+                local tempCooldown = TableCopy(statoRapine[indice].cooldown)
                 table.wipe(statoRapine[indice])
                 defaultRapina(indice, Config.Case[indice])
                 statoRapine[indice].cooldown = tempCooldown
@@ -215,7 +215,7 @@ AddEventHandler("furto_case:lasciaZona", function(indice)
             end
         end
 
-        local tempCooldown = ESX.TableCopy(statoRapine[indice].cooldown)
+        local tempCooldown = TableCopy(statoRapine[indice].cooldown)
         table.wipe(statoRapine[indice])
         defaultRapina(indice, Config.Case[indice])
         statoRapine[indice].cooldown = tempCooldown
@@ -341,7 +341,7 @@ RegisterCommand("furto_case:riavvia", function (source, args, raw)
                 end
 
                 Cooldown = 0
-                local tempCooldown = ESX.TableCopy(statoRapine[indice].cooldown)
+                local tempCooldown = TableCopy(statoRapine[indice].cooldown)
                 tempCooldown.attuale = 0
                 
                 table.wipe(statoRapine[indice])

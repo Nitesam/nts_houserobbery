@@ -197,3 +197,17 @@ Config.Case = {
     }
 }
 
+function TableCopy(orig)
+	local orig_type, copy = type(orig)
+
+    if orig_type == 'table' then
+        copy = {}
+        for orig_key, orig_value in next, orig, nil do
+            copy[TableCopy(orig_key)] = TableCopy(orig_value)
+        end
+        setmetatable(copy, TableCopy(getmetatable(orig)))
+    else
+        copy = orig
+    end
+    return copy
+end
