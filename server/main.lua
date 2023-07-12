@@ -237,13 +237,13 @@ AddEventHandler("furto_case:disabilitaAllarme", function(casa, codice)
         statoRapine[casa].allarme.attivo = false
         
         if codice == statoRapine[casa].allarme.codiceAllarme then
-            G.showNotification("Password Corretta!<br>Allarme disabilitato.", "success", "E-Life")
+            ShowNotification(Lang[Config.Lang]["password_corretta"], "success", "House Robbery", G.source)
         else
-            G.showNotification("Password Errata!", "error", "E-Life")
+            ShowNotification(Lang[Config.Lang]["password_errata"], "error", "House Robbery", G.source)
             TriggerClientEvent("furto_case:inviaDispatch", statoRapine[casa].starter)
         end
     else
-        G.showNotification("Il Pannello si è Bloccato!", "error")
+        ShowNotification(Lang[Config.Lang]["pannello_bloccato"], "error", "House Robbery", G.source)
     end
 end)
 
@@ -351,9 +351,9 @@ RegisterCommand("furto_case:riavvia", function (source, args, raw)
                 statoRapine[indice].cooldown = tempCooldown
 
                 cambiaStatoPorta(indice, 1)
-                G.showNotification("Casa " .. indice .. " resettata!", "success", "E-Life")
+                ShowNotification(string.format(Lang[Config.Lang]["casa_reset_1"], indice), "success", "House Robbery", G.source)
             else
-                G.showNotification("Casa " .. indice .. " non esiste o non ha bisono di essere resettata!", "error", "E-Life")
+                ShowNotification(string.format(Lang[Config.Lang]["casa_reset_2"], indice) , "error", "House Robbery", G.source)
             end
         end)
     end

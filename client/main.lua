@@ -27,8 +27,8 @@ local function generaRapina(id)
             Draw3DText(self.coords.x, self.coords.y, self.coords.z, "[E] - Allarme")
         
             if self.currentDistance < 1 and IsControlJustReleased(0, 38) then
-                local input = lib.inputDialog('Codice Allarme', {
-                    {type = 'number', label = 'Codice di Sicurezza', description = 'Inserisci la Password', icon = 'fa-barcode'},
+                local input = lib.inputDialog(Lang[Config.Lang]["inserisci_password_title"], {
+                    {type = 'number', label = Lang[Config.Lang]["inserisci_password_label"], description = Lang[Config.Lang]["inserisci_password_description"], icon = 'fa-barcode'},
                 })
 
                 if input and input[1] then
@@ -50,7 +50,7 @@ local function generaRapina(id)
     function exitCheck:onExit()
         missioneCorrente = 0
         TriggerServerEvent("furto_case:lasciaZona", id)
-        ESX.ShowNotification("Sei Fuggito dalla Zona della Rapina.<br><br>Missione Conclusa.", "error", "E-Life")
+        ShowNotification(Lang[Config.Lang]["fuggito"], "error", "House Robbery")
         exitCheck:remove()
     end
 end
@@ -68,7 +68,7 @@ Citizen.CreateThread(function()
         SetBlipColour(listaZone[k].blip, 6)
         SetBlipAsShortRange(listaZone[k].blip, true)
         BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString("Rapina - " .. v.nome)
+        AddTextComponentString("House Robbery - " .. v.nome)
         EndTextCommandSetBlipName(listaZone[k].blip)
 
         AddDoorToSystem(k + (joaat(v.nome)), v.porta.modello, v.porta.coordinate)
@@ -88,7 +88,7 @@ Citizen.CreateThread(function()
                     onSelect = function()
                         if not Config.Ordine[ESX.PlayerData.job.name] then
                             if DoorSystemGetDoorState(k + (joaat(v.nome))) == 1 then
-                                if not verificaNotte() then ESX.ShowNotification("Sarebbe meglio attendere la notte.", "error", "E-Life") return end
+                                if not verificaNotte() then ShowNotification(Lang[Config.Lang]["attendi_notte"], "error", "House Robbery") return end
                                 if not lib.callback.await("furto_case:callbackStato", false, k) then
                                     local qty = exports.ox_inventory:Search('count', v.oggettoApertura)
                                     if qty > 0 then
@@ -111,15 +111,15 @@ Citizen.CreateThread(function()
                                                 TriggerServerEvent("furto_case:cambiaStatoPorta", k, 0)
                                                 generaRapina(k)
 
-                                                ESX.ShowNotification("La Porta si è Aperta!", "success")
+                                                ShowNotification(Lang[Config.Lang]["porta_aperta"], "success", "House Robbery")
                                                 if math.random(1, 100) < 20 then
                                                     Wait(4000)
-                                                    ESX.ShowNotification("Senti un rumore strano, come fosse un ticchettio.", "info")
+                                                    ShowNotification(Lang[Config.Lang]["rumore_strano"], "info", "House Robbery")
                                                     Wait(3000)
-                                                    ESX.ShowNotification("OH CAZZO!<br>E' un Allarme, ma non è ancora scattato!<br>Forse dovresti provare a disabilitarlo!", "error", "", 7500)
+                                                    ShowNotification(Lang[Config.Lang]["allarme_attento"], "error", "House Robbery", 7500)
                                                 end
                                             else
-                                                ESX.ShowNotification("Sembra ci sia qualcuno in Casa.<br>Meglio passare dopo!", "error", "E-Life")
+                                                ShowNotification(Lang[Config.Lang]["non_disponibile"], "error", "House Robbery")
                                             end
                                         else
                                             if math.random(1, 100) < 30 then
@@ -127,10 +127,10 @@ Citizen.CreateThread(function()
                                             end
                                         end
                                     else
-                                        ESX.ShowNotification("Non possiedi l'oggetto giusto per poter aprire questa porta!", "error")
+                                        ShowNotification(Lang[Config.Lang]["item_mancante"], "error", "House Robbery")
                                     end
                                 else
-                                    ESX.ShowNotification("Una Rapina è già in corso presso questo indirizzo!", "error", "E-Life")
+                                    ShowNotification(Lang[Config.Lang]["rapina_in_corso"], "error", "House Robbery")
                                 end
                             end
                         else
@@ -277,7 +277,9 @@ end)
 
 RegisterNetEvent("furto_case:inviaDispatch")
 AddEventHandler("furto_case:inviaDispatch", function()
-    exports["ls-dispatch"]:HouseRobbery()
+    -- exports["ls-dispatch"]:HouseRobbery()
+
+    -- PUT YOUR DISPATCH SYSTEM HERE TO NOTIFY LAW ENFORCEMENT!!!!
 end)
 
 AddEventHandler("esx:onPlayerDeath", function ()

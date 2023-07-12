@@ -1,6 +1,8 @@
 Config = {}
 Config.Debug = true -- If Debug mode is true, the bounding boxes of objects spawned by the script will be visible.
 
+Config.Lang = 'en'
+
 Config.CooldownGenerico = 600 -- Cooldown between various robberies.
 
 Config.Notturno = { -- Section to limit the robbery start time to night only
@@ -45,6 +47,36 @@ Config.Case = {
         },
     }
 }
+
+Lang = {
+    ["en"] = {
+        ["inserisci_password_title"] = "Codice Allarme",
+        ["inserisci_password_label"] = "Codice di Sicurezza",
+        ["inserisci_password_description"] = "Inserisci la Password",
+        ["fuggito"] = "Sei Fuggito dalla Zona della Rapina.<br><br>Missione Conclusa.",
+        ["attendi_notte"] = "Sarebbe meglio attendere la notte.",
+        ["porta_aperta"] = "La Porta si è Aperta!",
+        ["rumore_strano"] = "Senti un rumore strano, come fosse un ticchettio.",
+        ["allarme_attento"] = "OH CAZZO!<br>E' un Allarme, ma non è ancora scattato!<br>Forse dovresti provare a disabilitarlo!",
+        ["non_disponibile"] = "Sembra ci sia qualcuno in Casa.<br>Meglio passare dopo!",
+        ["item_mancante"] = "Non possiedi l'oggetto giusto per poter aprire questa porta!",
+        ["rapina_in_corso"] = "Una Rapina è già in corso presso questo indirizzo!",
+        ["password_corretta"] = "Password Corretta!<br>Allarme disabilitato.",
+        ["password_errata"] = "Password Errata!",
+        ["pannello_bloccato"] = "Il Pannello è Bloccato!",
+        ["casa_reset_1"] = "Casa %s resettata!",
+        ["casa_reset_2"] = "Casa %s non esiste o non ha bisono di essere resettata!"
+    }
+}
+
+function ShowNotification(text, type, title, source)
+    if IsDuplicityVersion() then
+        if not source or source <= 0 then print("Error on Notification"); return; end
+        TriggerClientEvent("esx:showNotification", source, text, type, title)
+    else
+        ESX.ShowNotification(text, type, title)
+    end
+end
 
 function TableCopy(orig)
 	local orig_type, copy = type(orig)
