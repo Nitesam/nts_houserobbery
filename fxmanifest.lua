@@ -21,5 +21,6 @@ server_scripts {
 
 dependency {
     "ox_lib",
+    "ox_target",
     "es_extended"
 }
