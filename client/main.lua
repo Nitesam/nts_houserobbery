@@ -80,6 +80,7 @@ Citizen.CreateThread(function()
             size = vec3(2, 2, 2),
             rotation = 45,
             debug = Config.Debug,
+            distance = 2.0,
             options = {
                 {
                     label = Lang[Config.Lang]["forza_porta"],
@@ -185,7 +186,7 @@ AddEventHandler("furto_case:aggiungiTacquinoCodice", function(indice, netId)
                 icon = 'fa-solid fa-barcode',
                 label = Lang[Config.Lang]["leggi_codice"],
                 canInteract = function(entity, distance, coords, name, bone)
-                    return not exports.funzioni_varie:statusMani() and not exports.ns_deathsystem:Morto() and distance < 1.2
+                    return distance < 1.2
                 end,
                 onSelect = function(data)
                     lib.hideTextUI()
