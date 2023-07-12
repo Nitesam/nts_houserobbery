@@ -50,6 +50,24 @@ Config.Case = {
 
 Lang = {
     ["en"] = {
+        ["inserisci_password_title"] = "Alarm Code",
+        ["inserisci_password_label"] = "Security Code",
+        ["inserisci_password_description"] = "Enter the Password",
+        ["fuggito"] = "You have fled the Robbery Zone.<br><br>Mission Concluded.",
+        ["attendi_notte"] = "It would be better to wait for the night.",
+        ["porta_aperta"] = "The Door has Opened!",
+        ["rumore_strano"] = "You hear a strange noise, like a ticking.",
+        ["allarme_attento"] = "OH SHIT!<br>It's an alarm, but it hasn't gone off yet!<br>You might want to try disabling it!",
+        ["non_disponibile"] = "It seems like there's someone at Home.<br>Better come back later!",
+        ["item_mancante"] = "You do not possess the right object to be able to open this door!",
+        ["rapina_in_corso"] = "A Robbery is already taking place at this address!",
+        ["password_corretta"] = "Correct Password!<br>Alarm disabled.",
+        ["password_errata"] = "Wrong Password!",
+        ["pannello_bloccato"] = "The Panel is Locked!",
+        ["casa_reset_1"] = "House %s reset!",
+        ["casa_reset_2"] = "House %s does not exist or does not need to be reset!"
+    },
+    ["it"] = {
         ["inserisci_password_title"] = "Codice Allarme",
         ["inserisci_password_label"] = "Codice di Sicurezza",
         ["inserisci_password_description"] = "Inserisci la Password",
