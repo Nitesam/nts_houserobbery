@@ -24,7 +24,7 @@ local function generaRapina(id)
 
     function posDisattivaAllarme:nearby()
         if self.currentDistance < 3 then
-            Draw3DText(self.coords.x, self.coords.y, self.coords.z, "[E] - Allarme")
+            Draw3DText(self.coords.x, self.coords.y, self.coords.z, "[E] - " .. Lang[Config.Lang]["allarme"])
         
             if self.currentDistance < 1 and IsControlJustReleased(0, 38) then
                 local input = lib.inputDialog(Lang[Config.Lang]["inserisci_password_title"], {
@@ -113,9 +113,9 @@ Citizen.CreateThread(function()
 
                                                 ShowNotification(Lang[Config.Lang]["porta_aperta"], "success", "House Robbery")
                                                 if math.random(1, 100) < 20 then
-                                                    Wait(4000)
+                                                    Wait(8000)
                                                     ShowNotification(Lang[Config.Lang]["rumore_strano"], "info", "House Robbery")
-                                                    Wait(3000)
+                                                    Wait(6000)
                                                     ShowNotification(Lang[Config.Lang]["allarme_attento"], "error", "House Robbery", 7500)
                                                 end
                                             else
@@ -183,7 +183,7 @@ AddEventHandler("furto_case:aggiungiTacquinoCodice", function(indice, netId)
             {
                 name = 'tacquino_codice_' .. indice,
                 icon = 'fa-solid fa-barcode',
-                label = 'Leggi Codice',
+                label = Lang[Config.Lang]["leggi_codice"],
                 canInteract = function(entity, distance, coords, name, bone)
                     return not exports.funzioni_varie:statusMani() and not exports.ns_deathsystem:Morto() and distance < 1.2
                 end,

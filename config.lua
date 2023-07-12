@@ -43,16 +43,47 @@ Config.Case = {
                 listaOggetti = { -- Table with list of items that are collected 
                     ["gold"] = {min = 1, max = 3, prob = 20} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
                 }
-            }
+            },
+            [2] = {
+                rand = 100, -- spawn percentage.
+                prop = `prop_gold_bar`, -- prop of the spawn
+                dizionario = "missexile3", animazione = "ex03_dingy_search_case_b_michael", -- Single Collection Animation
+                coordinate = vec3(1.50, 524.45, 174.63), -- Spawn Coordinates
+                denaroSporco = 600, -- Amount of dirty money, 0 to cancel.
+                listaOggetti = { -- Table with list of items that are collected 
+                    ["gold"] = {min = 1, max = 3, prob = 20} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
+                }
+            },
+            [3] = {
+                rand = 100, -- spawn percentage.
+                prop = `prop_gold_bar`, -- prop of the spawn
+                dizionario = "missexile3", animazione = "ex03_dingy_search_case_b_michael", -- Single Collection Animation
+                coordinate = vec3(-6.61, 519.70, 174.58), -- Spawn Coordinates
+                denaroSporco = 600, -- Amount of dirty money, 0 to cancel.
+                listaOggetti = { -- Table with list of items that are collected 
+                    ["gold"] = {min = 1, max = 3, prob = 20} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
+                }
+            },
+            [4] = {
+                rand = 100, -- spawn percentage.
+                prop = `prop_gold_bar`, -- prop of the spawn
+                dizionario = "missexile3", animazione = "ex03_dingy_search_case_b_michael", -- Single Collection Animation
+                coordinate = vec3(-5.57, 526.55, 174.91), -- Spawn Coordinates
+                denaroSporco = 600, -- Amount of dirty money, 0 to cancel.
+                listaOggetti = { -- Table with list of items that are collected 
+                    ["gold"] = {min = 1, max = 3, prob = 20} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
+                }
+            },
         },
     }
 }
 
 Lang = {
     ["en"] = {
-        ["leggi_codice"] = 'Read Code',
-        ["raccogli_oggetto"] = 'Take',
-        ["forza_porta"] = 'Force Door',
+        ["allarme"] = "Alarm",
+        ["leggi_codice"] = "Read Code",
+        ["raccogli_oggetto"] = "Take",
+        ["forza_porta"] = "Force Door",
         ["inserisci_password_title"] = "Alarm Code",
         ["inserisci_password_label"] = "Security Code",
         ["inserisci_password_description"] = "Enter the Password",
@@ -71,6 +102,7 @@ Lang = {
         ["casa_reset_2"] = "House %s does not exist or does not need to be reset!"
     },
     ["it"] = {
+        ["allarme"] = "Allarme",
         ["leggi_codice"] = 'Leggi Codice',
         ["raccogli_oggetto"] = 'Raccogli Oggetto',
         ["forza_porta"] = 'Forza Porta',
