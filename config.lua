@@ -1,5 +1,5 @@
 Config = {}
-Config.Debug = true -- If Debug mode is true, the bounding boxes of objects spawned by the script will be visible.
+Config.Debug = false -- If Debug mode is true, the bounding boxes of objects spawned by the script will be visible.
 
 Config.Lang = 'en'
 
