@@ -82,7 +82,7 @@ Citizen.CreateThread(function()
             debug = Config.Debug,
             options = {
                 {
-                    label = 'Forza Porta',
+                    label = Lang[Config.Lang]["forza_porta"],
                     icon = 'fas fa-person-booth',
                     name = k .. v.nome,
                     onSelect = function()

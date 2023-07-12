@@ -50,6 +50,7 @@ Config.Case = {
 
 Lang = {
     ["en"] = {
+        ["forza_porta"] = 'Force Door',
         ["inserisci_password_title"] = "Alarm Code",
         ["inserisci_password_label"] = "Security Code",
         ["inserisci_password_description"] = "Enter the Password",
@@ -68,6 +69,7 @@ Lang = {
         ["casa_reset_2"] = "House %s does not exist or does not need to be reset!"
     },
     ["it"] = {
+        ["forza_porta"] = 'Forza Porta',
         ["inserisci_password_title"] = "Codice Allarme",
         ["inserisci_password_label"] = "Codice di Sicurezza",
         ["inserisci_password_description"] = "Inserisci la Password",
