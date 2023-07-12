@@ -50,6 +50,8 @@ Config.Case = {
 
 Lang = {
     ["en"] = {
+        ["leggi_codice"] = 'Read Code',
+        ["raccogli_oggetto"] = 'Take',
         ["forza_porta"] = 'Force Door',
         ["inserisci_password_title"] = "Alarm Code",
         ["inserisci_password_label"] = "Security Code",
@@ -69,6 +71,8 @@ Lang = {
         ["casa_reset_2"] = "House %s does not exist or does not need to be reset!"
     },
     ["it"] = {
+        ["leggi_codice"] = 'Leggi Codice',
+        ["raccogli_oggetto"] = 'Raccogli Oggetto',
         ["forza_porta"] = 'Forza Porta',
         ["inserisci_password_title"] = "Codice Allarme",
         ["inserisci_password_label"] = "Codice di Sicurezza",

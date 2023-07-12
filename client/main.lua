@@ -220,7 +220,7 @@ AddEventHandler("furto_case:inizializzaProp", function(indice, tabella)
                 debug = Config.Debug,
                 options = {
                     {
-                        label = 'Raccogli Oggetto',
+                        label = Lang[Config.Lang]["raccogli_oggetto"],
                         icon = 'fas fa-person-booth',
                         name = k .. "_punti_raccolta",
                         onSelect = function()
