@@ -41,7 +41,7 @@ Config.Case = {
                 coordinate = vec3(-6.06, 531.31, 174.89), -- Spawn Coordinates
                 denaroSporco = 600, -- Amount of dirty money, 0 to cancel.
                 listaOggetti = { -- Table with list of items that are collected 
-                    ["gold"] = {min = 1, max = 3, prob = 20} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
+                    ["gold"] = {min = 1, max = 3, prob = 90} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
                 }
             },
             [2] = {
@@ -51,7 +51,7 @@ Config.Case = {
                 coordinate = vec3(1.50, 524.45, 174.63), -- Spawn Coordinates
                 denaroSporco = 600, -- Amount of dirty money, 0 to cancel.
                 listaOggetti = { -- Table with list of items that are collected 
-                    ["gold"] = {min = 1, max = 3, prob = 20} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
+                    ["gold"] = {min = 1, max = 3, prob = 80} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
                 }
             },
             [3] = {
@@ -61,7 +61,7 @@ Config.Case = {
                 coordinate = vec3(-6.61, 519.70, 174.58), -- Spawn Coordinates
                 denaroSporco = 600, -- Amount of dirty money, 0 to cancel.
                 listaOggetti = { -- Table with list of items that are collected 
-                    ["gold"] = {min = 1, max = 3, prob = 20} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
+                    ["gold"] = {min = 1, max = 3, prob = 90} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
                 }
             },
             [4] = {
@@ -71,7 +71,7 @@ Config.Case = {
                 coordinate = vec3(-5.57, 526.55, 174.91), -- Spawn Coordinates
                 denaroSporco = 600, -- Amount of dirty money, 0 to cancel.
                 listaOggetti = { -- Table with list of items that are collected 
-                    ["gold"] = {min = 1, max = 3, prob = 20} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
+                    ["gold"] = {min = 1, max = 3, prob = 50} -- min is the minimum value of the random, max its maximum and prob is the probability that the item is inserted!
                 }
             },
         },
