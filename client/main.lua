@@ -61,15 +61,17 @@ Citizen.CreateThread(function()
     for k, v in ipairs(Config.Case) do
         listaZone[k] = {}
 
-        listaZone[k].blip = AddBlipForCoord(v.porta.coordinate.x, v.porta.coordinate.y)
-        SetBlipSprite(listaZone[k].blip, 374)
-        SetBlipDisplay(listaZone[k].blip, 6)
-        SetBlipScale(listaZone[k].blip, 0.6)
-        SetBlipColour(listaZone[k].blip, 6)
-        SetBlipAsShortRange(listaZone[k].blip, true)
-        BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString("House Robbery - " .. v.nome)
-        EndTextCommandSetBlipName(listaZone[k].blip)
+        if v.showBlip then
+            listaZone[k].blip = AddBlipForCoord(v.porta.coordinate.x, v.porta.coordinate.y)
+            SetBlipSprite(listaZone[k].blip, 374)
+            SetBlipDisplay(listaZone[k].blip, 6)
+            SetBlipScale(listaZone[k].blip, 0.6)
+            SetBlipColour(listaZone[k].blip, 6)
+            SetBlipAsShortRange(listaZone[k].blip, true)
+            BeginTextCommandSetBlipName("STRING")
+            AddTextComponentString("House Robbery - " .. v.nome)
+            EndTextCommandSetBlipName(listaZone[k].blip)
+        end
 
         AddDoorToSystem(k + (joaat(v.nome)), v.porta.modello, v.porta.coordinate)
 

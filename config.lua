@@ -16,6 +16,7 @@ Config.Ordine = { -- list of law enforcement
 
 Config.Case = {
     [1] = {
+        showBlip = true, -- if true, a blip will be created on the map.
         nome = "Franklin", -- Name shown on the map
         poliziottiRichiesti = 0, -- Police required to start the robbery in this house.
         timerAllarme = 60, -- timer before the alarm goes off
